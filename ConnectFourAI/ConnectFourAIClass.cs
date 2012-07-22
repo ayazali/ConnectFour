@@ -23,10 +23,7 @@ namespace ConnectFourAI
 
         public int redCol;
         
-        //int HorCount = 0;
-        //int VerCount = 0;
-        //int LeftCount = 0;
-        //int RightCount = 0;
+
         public int TotalHeuristicCount = 0;
         public int[] PositionArray;
         public ConnectFourAIClass(Board cnboard)
@@ -34,8 +31,7 @@ namespace ConnectFourAI
             ConnectFourBoard = cnboard;
             isWin = ConnectFourBoard.EMPTY;
             PositionArray = ConnectFourBoard.getPositionArray();
-            //CusHeuristic(this).
-            //nextMove();
+
         }
         public void nextMove()
         {
@@ -46,7 +42,7 @@ namespace ConnectFourAI
             redCol = colLastMoveOtherPlayer;
             redRow = rowLastMoveOtherPlayer;
             ConnectFourBoard.count++;
-            //ConnectFourBoard.console = redRow+" " + redCol;
+
             if (checkWinState(rowLastMoveOtherPlayer, colLastMoveOtherPlayer, ConnectFourBoard.PLAYER_ONE) == 1)
             {
                 MessageBox.Show("You have won");
@@ -206,9 +202,8 @@ namespace ConnectFourAI
                     check = 1;
             }
             return heuristicCountVertical;
-            //ConnectFourBoard.console = heuristicCountVertical + "lm row " + ConnectFourBoard.lastMove_PlayeroneRow + " lm c" + ConnectFourBoard.lastMove_PlayeroneCol;
         }
-        public int CheckLeftSideDiagonal(int r, int c, int p)////when the slope is 1
+        public int CheckLeftSideDiagonal(int r, int c, int p)//when the slope is 1
         {
             int check = 0;
             int heuristicCountLeftSideDiagonal = 0;
